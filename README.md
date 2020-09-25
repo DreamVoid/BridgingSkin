@@ -9,3 +9,8 @@ BlockSkin Addon for BridgingAnalyzer
 > 1. 不得抹去作者(SakuraKooi)的信息
 > 2. 如果公开发布,需注明本帖地址
 > 3. 如果公开发布且修改过源码,需公开修改后的源代码
+
+# DreamVoid 修改内容
+plugin.yml的指令和权限内容声明补充
+
+项目结构优化、移除部分代码并对编译进行优化

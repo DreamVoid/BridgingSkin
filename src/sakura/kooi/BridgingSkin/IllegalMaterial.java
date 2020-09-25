@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.bukkit.Material;
 
 public class IllegalMaterial {
-	private static final ArrayList<Material> illegalMaterial = new ArrayList<Material>();
+	private static final ArrayList<Material> illegalMaterial = new ArrayList<>();
 	static {
 		illegalMaterial.add(Material.REDSTONE_BLOCK);
 		illegalMaterial.add(Material.PISTON_BASE);

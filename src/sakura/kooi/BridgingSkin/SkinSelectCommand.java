@@ -33,7 +33,6 @@ public class SkinSelectCommand implements CommandExecutor {
 			}
 			if (IllegalMaterial.isIllegal(material)) {
 				illegalSkins.add(skin);
-				continue;
 			}
 		}
 		if (!illegalSkins.isEmpty()) {

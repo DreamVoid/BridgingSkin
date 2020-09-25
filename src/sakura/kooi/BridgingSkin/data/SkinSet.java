@@ -4,7 +4,7 @@ import sakura.lib.com.google.gson.annotations.SerializedName;
 
 public class SkinSet {
 	@SerializedName("Material")
-	public String material;
+	public final String material;
 	@SerializedName("Data")
 	public byte data;
 	public SkinSet(final String material,final byte data) {
@@ -20,7 +20,7 @@ public class SkinSet {
 	public boolean equals(final Object obj) {
 		if (!(obj instanceof SkinSet)) return super.equals(obj);
 		if (material.equals(((SkinSet)obj).material))
-			if (data == ((SkinSet)obj).data) return true;
+			return data == ((SkinSet) obj).data;
 		return false;
 	}
 	@Override

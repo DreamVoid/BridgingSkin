@@ -21,13 +21,9 @@ public class ClearThread implements Runnable {
 	public void run() {
 		int total = 0;
 		int cleared = 0;
-		for (final File file : BridgingSkin.rootDir.listFiles(new FileFilter() {
-
-			@Override
-			public boolean accept(final File file) {
-				if (file.getName().contains("-")) return false;
-				return file.getName().endsWith(".json");
-			}
+		for (final File file : BridgingSkin.rootDir.listFiles(file -> {
+			if (file.getName().contains("-")) return false;
+			return file.getName().endsWith(".json");
 		})) {
 			boolean edited = false;
 			try {

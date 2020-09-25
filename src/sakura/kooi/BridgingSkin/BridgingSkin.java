@@ -22,8 +22,8 @@ import lombok.Getter;
 import sakura.kooi.BridgingAnalyzer.api.BridgingAnalyzerAPI;
 import sakura.kooi.BridgingSkin.data.PlayerSkin;
 import sakura.kooi.BridgingSkin.data.SkinSet;
-import sakura.lib.com.google.gson.Gson;
-import sakura.lib.com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class BridgingSkin extends JavaPlugin implements Listener{
 	@Getter private static BridgingSkin instance;
@@ -174,14 +174,13 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 		if (e.getDestination()==null) return;
 		if (e.getDestination().getTitle().contains("§6§l皮肤库存")) {
 			e.setCancelled(true);
-			return;
 		}
 	}
 
 	@EventHandler
 	public void onSetSkin(final PlayerInteractEvent e) {
-		if (e.getPlayer().getItemInHand()==null || e.getPlayer().getItemInHand().getType()==Material.AIR)
-			return;
+		if (e.getPlayer().getItemInHand()==null || e.getPlayer().getItemInHand().getType()==Material.AIR) {
+		}
 		else {
 			final ItemStack item = e.getPlayer().getItemInHand();
 			if (!item.hasItemMeta()) return;
@@ -193,7 +192,6 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 			saveSkin(skin);
 			e.getPlayer().setItemInHand(null);
 			e.getPlayer().sendMessage("§a此方块已添加到你的搭路皮肤库存! 输入/bskin切换皮肤");
-			return;
 		}
 	}
 }

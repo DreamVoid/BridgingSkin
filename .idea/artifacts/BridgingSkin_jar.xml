@@ -3,10 +3,6 @@
     <output-path>$PROJECT_DIR$/classes/artifacts/BridgingSkin_jar</output-path>
     <root id="archive" name="BridgingSkin.jar">
       <element id="module-output" name="BridgingSkin" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libs/lombok.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libs/gson-2.8.5-repackage.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libs/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../BridgingAnalyzer/out/artifacts/BridgingAnalyzer_jar/BridgingAnalyzer.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -25,7 +25,9 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="BridgingAnalyzer" level="project" />
+    <orderEntry type="library" name="gson-2.8.5-repackage" level="project" />
+    <orderEntry type="library" name="lombok" level="project" />
+    <orderEntry type="library" name="spigot-1.8.8-R0.1-SNAPSHOT-latest" level="project" />
   </component>
 </module>

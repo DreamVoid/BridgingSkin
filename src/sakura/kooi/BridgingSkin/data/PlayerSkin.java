@@ -7,7 +7,7 @@ import sakura.lib.com.google.gson.annotations.SerializedName;
 public class PlayerSkin {
 	@SerializedName("uuid")
 	public final String uuid;
-	public String player;
+	public final String player;
 	@SerializedName("currentSelected")
 	public SkinSet currentSkin;
 	@SerializedName("allSkins")

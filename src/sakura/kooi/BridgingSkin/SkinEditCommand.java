@@ -21,8 +21,8 @@ public class SkinEditCommand implements CommandExecutor {
 			if (sender.hasPermission("bridgingSkin.admin")) {
 				if (args.length<2) {
 					sender.sendMessage(new String[] {
-							"§6§lBridgingSkin §7>> §e/bskin-edit edit <player>",
-							"§6§lBridgingSkin §7>> §e/bskin-edit clear <material> [data]"
+							"§e/bskin-edit edit <player>",
+							"§e/bskin-edit clear <material> [data]"
 					});
 					return true;
 				}
@@ -31,12 +31,12 @@ public class SkinEditCommand implements CommandExecutor {
 					final String player = args[1];
 					final OfflinePlayer offp = Bukkit.getOfflinePlayer(player);
 					if (offp==null) {
-						sender.sendMessage("§6§lBridgingSkin §7>> §c玩家 "+player+" 不存在");
+						sender.sendMessage("§c玩家 "+player+" 不存在");
 						return true;
 					}
 					final PlayerSkin skin = BridgingSkin.getSkin(offp.getName());
 					if (skin==null) {
-						sender.sendMessage("§6§lBridgingSkin §7>> §c玩家 "+offp.getName()+" 没有皮肤");
+						sender.sendMessage("§c玩家 "+offp.getName()+" 没有皮肤");
 						return true;
 					}
 					openSkinInventory((Player) sender, skin);
@@ -45,7 +45,7 @@ public class SkinEditCommand implements CommandExecutor {
 				case "clear": {
 					final Material material = Material.getMaterial(args[1].toUpperCase());
 					if (material == null) {
-						sender.sendMessage("§6§lBridgingSkin §7>> §cMaterial "+args[1].toUpperCase()+" 不存在");
+						sender.sendMessage("§cMaterial "+args[1].toUpperCase()+" 不存在");
 						return true;
 					}
 					byte data = -1;
@@ -53,7 +53,7 @@ public class SkinEditCommand implements CommandExecutor {
 						try {
 							data = Byte.parseByte(args[2]);
 						} catch (final Exception e) {
-							sender.sendMessage("§6§lBridgingSkin §7>> §c数据值错误");
+							sender.sendMessage("§c数据值错误");
 							return true;
 						}
 					}

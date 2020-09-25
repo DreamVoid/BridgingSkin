@@ -19,7 +19,7 @@ public class SkinSelectCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§6§l搭路皮肤 §7>> §c仅玩家可以执行.");
+			sender.sendMessage("§c仅玩家可以执行.");
 			return true;
 		}
 		final Player p =(Player) sender;
@@ -38,7 +38,7 @@ public class SkinSelectCommand implements CommandExecutor {
 		}
 		if (!illegalSkins.isEmpty()) {
 			BridgingSkin.getSkin(p.getName(), p.getUniqueId().toString()).allSkin.removeAll(illegalSkins);
-			sender.sendMessage("§6§l搭路皮肤 §7>> §c在你的皮肤库存发现了一些无效物品, 已自动删除.");
+			sender.sendMessage("§c在你的皮肤库存发现了一些无效物品, 已自动删除.");
 		}
 		for (final SkinSet skin : BridgingSkin.getSkin(p.getName(), p.getUniqueId().toString()).allSkin) {
 			Material material = Material.getMaterial(skin.material);

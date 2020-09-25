@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BridgingAnalyzer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../BridgingAnalyzer/out/artifacts/BridgingAnalyzer_jar/BridgingAnalyzer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

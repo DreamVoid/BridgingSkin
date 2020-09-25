@@ -1,10 +1,21 @@
 name: BridgingSkin
 main: sakura.kooi.BridgingSkin.BridgingSkin
 version: 3
-author: SakuraKooi
+author: SakuraKooi, DreamVoid
 depend: ["BridgingAnalyzer"]
 commands:
   bskin:
     description: Choose your skin.
     usage: /bskin
+    permission: bridgingSkin.player
   bskin-edit:
+    description: Edit your skin.
+    usage: /bskin-edit
+    permission: bridgingSkin.admin
+permissions:
+  bridgingSkin.player:
+    default: true
+    description: A command for player.
+  bridgingSkin.admin:
+    default: op
+    description: A connamd for administrators.

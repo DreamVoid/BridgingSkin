@@ -59,16 +59,16 @@ public class ClearThread implements Runnable {
 					BridgingSkin.saveSkin(skin);
 					BridgingSkin.skins.remove(skin.player);
 					cleared++;
-					sender.sendMessage("§6§lBridgingSkin §7>> §e成功清理玩家 "+skin.player+" 的皮肤库存");
+					sender.sendMessage("§e成功清理玩家 "+skin.player+" 的皮肤库存");
 				}/* else {
-					sender.sendMessage("§6§lBridgingSkin §7>> §7扫描玩家 "+skin.player+" 的皮肤库存完毕");
+					sender.sendMessage("§7扫描玩家 "+skin.player+" 的皮肤库存完毕");
 				}*/
 			} catch (final Exception e) {
 				e.printStackTrace();
-				sender.sendMessage("§6§lBridgingSkin §7>> §c处理文件 "+file.getName()+" 时出错");
+				sender.sendMessage("§c处理文件 "+file.getName()+" 时出错");
 			}
 		}
-		sender.sendMessage("§6§lBridgingSkin §7>> §b皮肤清理完毕 共扫描 "+total+" 玩家 / 清理 "+cleared+" 玩家");
+		sender.sendMessage("§b皮肤清理完毕 共扫描 "+total+" 玩家 / 清理 "+cleared+" 玩家");
 	}
 
 }

@@ -19,7 +19,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import lombok.Cleanup;
 import lombok.Getter;
-import sakura.kooi.BridgingAnalyzer.Utils.Metrics;
 import sakura.kooi.BridgingAnalyzer.api.BridgingAnalyzerAPI;
 import sakura.kooi.BridgingSkin.data.PlayerSkin;
 import sakura.kooi.BridgingSkin.data.SkinSet;
@@ -60,8 +59,6 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 	@Override
 	public void onEnable() {
 		instance = this;
-		final Metrics metrics = new Metrics(this);
-		metrics.addCustomChart(new Metrics.SimplePie("distributeversion", () -> "Public-Bilibili-Final"));
 		rootDir = new File("plugins" + File.separator + "BridgingSkin"+File.separator+"skins");
 		if (!rootDir.exists()) {
 			rootDir.mkdirs();
@@ -75,13 +72,7 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 		Bukkit.getScheduler().runTaskTimer(this, this::saveData, 5*60*20, 5*60*20);
 
 		Bukkit.getConsoleSender().sendMessage(new String[]{
-				"§bBridgingSkin §7>> §f----------------------------------------------------------------",
-				"§bBridgingSkin §7>> §dBridgingAnalyzer附属 搭路皮肤 最终版 已加载 §bBy.SakuraKooi",
-				"§bBridgingSkin §7>> §c此插件于Bilibili免费公开发布, 作者已退MC, 诸事勿扰",
-				"§bBridgingSkin §7>> §f----------------------------------------------------------------",
-				"§bBridgingSkin §7>> §e配合一款lore修改插件使用",
-				"§bBridgingSkin §7>> §e制作皮肤物品: 在物品上增加一行lore [ §6&6皮肤方块 §e]",
-				"§bBridgingSkin §7>> §f----------------------------------------------------------------"
+				"[BridgingSkin] §e制作皮肤物品: 在物品上增加一行lore [ §6&6皮肤方块 §e]",
 		});
 	}
 	@Override
@@ -169,7 +160,7 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 			getSkin(player.getName(), player.getUniqueId().toString()).currentSkin = new SkinSet(item.getType().name(),item.getData().getData());
 			player.closeInventory();
 			BridgingAnalyzerAPI.refreshItem(player);
-			player.sendMessage("§6§l搭路皮肤 §7>> §a你的搭路皮肤已更换");
+			player.sendMessage("§a你的搭路皮肤已更换");
 		}
 	}
 	@EventHandler
@@ -201,7 +192,7 @@ public class BridgingSkin extends JavaPlugin implements Listener{
 			skin.allSkin.add(new SkinSet(item.getType().name(),item.getData().getData()));
 			saveSkin(skin);
 			e.getPlayer().setItemInHand(null);
-			e.getPlayer().sendMessage("§6§l[BridgingAnalyzer] §a此方块已添加到你的搭路皮肤库存! 输入/bskin切换皮肤");
+			e.getPlayer().sendMessage("§a此方块已添加到你的搭路皮肤库存! 输入/bskin切换皮肤");
 			return;
 		}
 	}
